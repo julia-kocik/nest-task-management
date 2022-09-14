@@ -22,12 +22,11 @@ export class TasksService {
     }
     //search
     if (search) {
-      tasks = tasks.filter((item) => {
-        return item.title.toLowerCase().includes(search) ||
-          item.description.toLowerCase().includes(search)
-          ? true
-          : false;
-      });
+      tasks = tasks.filter(
+        (item) =>
+          item.title.toLowerCase().includes(search) ||
+          item.description.toLowerCase().includes(search),
+      );
     }
     //return final result
     return tasks;
