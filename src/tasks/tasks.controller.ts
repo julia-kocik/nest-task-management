@@ -44,13 +44,12 @@ export default class TasksController {
     return this.taskService.createTask(createTaskDto, user);
   }
 
-  // @Delete()
-  // deleteAllTasks(): Task[] {
-  //   return this.taskService.deleteAllTasks();
-  // }
   @Delete('/:id')
-  deleteOneTask(@Param('id') id: string): Promise<string> {
-    return this.taskService.deleteOneTask(id);
+  deleteOneTask(
+    @Param('id') id: string,
+    @GetUser() user: User,
+  ): Promise<string> {
+    return this.taskService.deleteOneTask(id, user);
   }
 
   @Patch('/:id/status')
