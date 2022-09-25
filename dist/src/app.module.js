@@ -31,7 +31,7 @@ AppModule = __decorate([
                     return {
                         ssl: isProduction ? true : false,
                         extra: {
-                            ssl: isProduction ? { rejectUnauthorize: false } : null,
+                            ssl: isProduction ? { rejectUnauthorized: false } : null,
                         },
                         type: 'postgres',
                         autoLoadEntities: true,
